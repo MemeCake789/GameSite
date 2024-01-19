@@ -1,4 +1,5 @@
-// variables
+// shader effect by Juxtopposed: https://codepen.io/Juxtopposed/pen/MWZWpVQ
+
 const imageContainer = document.getElementById("imageContainer");
 const imageElement = document.getElementById("myImage");
 
@@ -16,11 +17,12 @@ const vertexShader = `
     varying vec2 vUv;
     void main() {
       vUv = uv;
-      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, .4);
     }
 `;
 
 const fragmentShader = `
+    
     varying vec2 vUv;
     uniform sampler2D u_texture;    
     uniform vec2 u_mouse;
@@ -28,14 +30,14 @@ const fragmentShader = `
     uniform float u_aberrationIntensity;
 
     void main() {
-        vec2 gridUV = floor(vUv * vec2(20.0, 20.0)) / vec2(20.0, 20.0);
+        vec2 gridUV = floor(vUv * vec2(25.0, 25.0)) / vec2(25.0, 25.0);
         vec2 centerOfPixel = gridUV + vec2(1.0/20.0, 1.0/20.0);
         
         vec2 mouseDirection = u_mouse - u_prevMouse;
         
         vec2 pixelToMouseDirection = centerOfPixel - u_mouse;
         float pixelDistanceToMouse = length(pixelToMouseDirection);
-        float strength = smoothstep(0.3, 0.0, pixelDistanceToMouse);
+        float strength = smoothstep(0.2, 0.0, pixelDistanceToMouse);
  
         vec2 uvOffset = strength * - mouseDirection * 0.2;
         vec2 uv = vUv - uvOffset;
