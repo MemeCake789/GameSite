@@ -2446,7 +2446,8 @@ html {
     border: 2px solid #616161;
     border-radius: 5px 5px 30px;
     margin-top: 0;
-    margin-left: 0;
+    margin-left: 10px;
+    margin-right: 10px;
     padding-top: 0;
   }
   
@@ -2470,6 +2471,12 @@ html {
     border-right-color: rgba(255, 255, 255, 0);
   }
   
+  .games-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+  }
   .game_info {
     height: 50%;
     -webkit-backdrop-filter: blur(7px);
@@ -2497,10 +2504,10 @@ html {
     line-height: 1.1rem;
   }
   
-  .game_deloper {
+  .game_developer {
     color: #fff;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 20;
+    margin-bottom: 20;
     padding: 5px 10px 10px;
     font-family: Ppformula, sans-serif;
     font-size: .8rem;
@@ -2520,7 +2527,7 @@ html {
     line-height: .8rem;
     position: relative;
     top: auto;
-    bottom: -37%;
+    bottom: 0%;
     left: 0%;
     right: auto;
   }
