@@ -5,10 +5,8 @@
     <head>
         <meta charset="utf-8"/>
         <title>Games</title>
-        <meta content="Games" property="og:title"/>
-        <meta content="Games" property="twitter:title"/>
-        <meta content="width=device-width, initial-scale=1" name="viewport"/>
-        <meta content="Webflow" name="generator"/>
+
+        <!--Fonts-->
         <link href="style.css" rel="stylesheet" type="text/css"/>
         <link href="https://fonts.googleapis.com" rel="preconnect"/>
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
@@ -28,54 +26,16 @@
                 ("ontouchstart"in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
             }(window, document);
         </script>
+
+        
         <link href="https://assets-global.website-files.com/img/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
         <link href="https://assets-global.website-files.com/img/webclip.png" rel="apple-touch-icon"/>
+    
+        <script src="games.js"></script>
     </head>
     <body class="body">
 
-        <script type="text/javascript">
-fetch('games.json')
-  .then(response => response.json())
-  .then(data => {
-    var gamesContainer = document.getElementById('games-container');
-    data.games.forEach(game => {
-      var gameElement = document.createElement('div');
-      gameElement.className = 'game';
 
-      var imgElement = document.createElement('img');
-      imgElement.src = game.image;
-      imgElement.loading = 'lazy';
-      imgElement.width = '313';
-      imgElement.className = 'game_image';
-
-      var infoElement = document.createElement('div');
-      infoElement.className = 'game_info';
-
-      var nameElement = document.createElement('h1');
-      nameElement.className = 'game_name';
-      nameElement.textContent = game.name;
-
-      var developerElement = document.createElement('h1');
-      developerElement.className = 'game_developer';
-      developerElement.textContent = game.developer;
-
-      var genreElement = document.createElement('h1');
-      genreElement.className = 'game_genre';
-      genreElement.textContent = game.genre;
-
-      infoElement.appendChild(nameElement);
-      infoElement.appendChild(developerElement);
-      infoElement.appendChild(genreElement);
-
-      gameElement.appendChild(imgElement);
-      gameElement.appendChild(infoElement);
-
-      gamesContainer.appendChild(gameElement);
-    });
-  })
-  .catch(error => console.error('Error:', error));
-
-        </script>
 
         <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar-container w-nav">
             <div class="container">
