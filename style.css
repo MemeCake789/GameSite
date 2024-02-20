@@ -2435,20 +2435,13 @@ html {
     background-color: #121212;
   }
   
-  .grid {
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
+
   
   .game {
     width: 248px;
     height: 248px;
     border: 2px solid #616161;
     border-radius: 5px 5px 30px;
-    margin-top: 0;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-top: 0;
   }
   
   .line_panel_left {
@@ -2472,10 +2465,14 @@ html {
   }
   
   .games-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-left: 54px;
+    margin-right: 54px;
+    grid-row-gap: 16px;
+    grid-column-gap: 16px;
+    grid-template-rows: auto auto;
+    grid-auto-columns: 1fr;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 20px;
-    padding: 20px;
   }
   .game_info {
     height: 50%;
@@ -2532,15 +2529,6 @@ html {
     right: auto;
   }
   
-  .game-card {
-    grid-column-gap: 10px;
-    flex: 0 auto;
-    justify-content: flex-start;
-    align-items: flex-start;
-    text-decoration: none;
-    display: flex;
-    position: relative;
-  }
   
   .hero-image {
     object-fit: cover;
