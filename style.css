@@ -2317,7 +2317,7 @@ html {
     margin-bottom: 140px;
     margin-left: auto;
     position: relative;
-    right: -20px;
+    
   }
   
   .list {
@@ -2442,8 +2442,13 @@ html {
     height: 248px;
     border: 2px solid #616161;
     border-radius: 5px 5px 30px;
+    transition: border 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   }
-  
+
+  .game:hover{
+    border: 2px solid #d7d7d7;
+
+  }  
   .line_panel_left {
     width: 25%;
     height: 100%;
@@ -2489,6 +2494,7 @@ html {
     left: 0%;
     right: auto;
   }
+
   
   .game_name {
     color: #fff;

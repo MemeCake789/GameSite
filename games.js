@@ -34,6 +34,11 @@ fetch('games.json')
       gameElement.appendChild(imgElement);
       gameElement.appendChild(infoElement);
 
+      // Add click event listener
+      gameElement.addEventListener('click', function() {
+        window.location.href = 'player.html?cdn_url=' + encodeURIComponent(game.cdn_url);
+      });
+
       gamesContainer.appendChild(gameElement);
     });
   })

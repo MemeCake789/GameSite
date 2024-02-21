@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+</head>
+<body>
+    <iframe id="game-iframe" width="100%" height="100%" frameborder="0"></iframe>
+
+    <script>
+        // Get the CDN URL from the query parameters
+        var urlParams = new URLSearchParams(window.location.search);
+        var cdnUrl = urlParams.get('cdn_url');
+
+        // Set the source of the iframe to the CDN URL
+        document.getElementById('game-iframe').src = cdnUrl;
+    </script>
+</body>
+</html>
